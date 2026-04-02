@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" role="img" aria-labelledby="mz-logo-title">
+  <title id="mz-logo-title">Michael Zeta</title>
+  <rect width="56" height="56" rx="14" fill="#0000ff"/>
+  <text
+    x="28"
+    y="37"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="20"
+    font-weight="800"
+    letter-spacing="-0.02em"
+  >MZ</text>
+</svg>

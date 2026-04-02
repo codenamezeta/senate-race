@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Michael Zeta//Student Senate//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:chaffey-ccsg-vote-2026@michaelzeta.com
+DTSTAMP:20260402T120000Z
+DTSTART:20260420T150000Z
+DTEND:20260423T230000Z
+SUMMARY:Chaffey CCSG — Online voting window
+DESCRIPTION:Polls open Monday\, April 20 at 8:00 AM and close Thursday\, April 23 at 4:00 PM Pacific. Vote online through the official CCSG voting portal.
+LOCATION:Online
+END:VEVENT
+END:VCALENDAR

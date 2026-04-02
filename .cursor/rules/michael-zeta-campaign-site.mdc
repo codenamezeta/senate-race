@@ -1,0 +1,52 @@
+---
+description: Michael Zeta Student Senator campaign — mission, tone, design, stack, features, compliance
+alwaysApply: true
+---
+
+# Michael Zeta — Student Senator Campaign Site
+
+**Org:** Chaffey College Student Government (CCSG). **Hosting:** custom domain `michaelzeta.com`.
+
+## Mission (not a “vote for me” brochure)
+
+Educational tool for **servant leadership**: explain tangible benefits of student government, empower students to use their voice, position Michael as a **grounded peer advocate**.
+
+**Primary CTA:** Teach **why, how, and when** to vote (**April 20–23**), then drive **calendar reminders** and **email sign-ups**.
+
+## Audience & voice
+
+- **Who:** Gen Z community college students — busy, time-protective, authenticity-first, allergic to corporate/political jargon.
+- **Tone:** Direct, pragmatic, **active voice**, minimal fluff. **Peer-to-peer** (fellow student “in the trenches,” not admin/boss). **Empathetic but punchy:** paragraphs **2–3 sentences**; use **bold** for key takeaways.
+- **Themes:** **protecting the hustle**, **financial transparency** (where student fees go), **campus culture**.
+
+## Layout & visual system
+
+- **Single continuous scrolling landing page** — **no deep nav** (reduce drop-off). **Mobile-first.**
+- **Aesthetic:** high-contrast, **tech minimalist**, generous whitespace.
+- **Color:** primary accent **pure / tech blue** (`#0000ff` or Tailwind `blue-600`); **vibrant yellow** for secondary accents / high-visibility CTAs.
+- **Type:** clear hierarchy; **emphasize with heavier font weights.**
+
+## Stack
+
+- **Next.js** (prefer **App Router**). **Tailwind CSS** (utility-first). **API routes** for email capture (e.g. Resend or Mailchimp free tier) — **no SMS.**
+
+## Required sections
+
+1. **Hero:** Strong hook that **acknowledges real student life**. **No immediate vote ask.**
+2. **Three “whys” (distinct blocks):**
+   - **Financial transparency** — where College Service fees go.
+   - **Advocacy** — **9+1** rights and policy change.
+   - **Campus culture** — club funding and events.
+3. **Action hub (page bottom):**
+   - **Calendar:** control that offers **Google Calendar template URL** and/or **`.ics` download** (Apple). Event: **Mon Apr 20, 8:00 AM → Thu Apr 23, 4:00 PM** (voting window).
+   - **Email reminder:** minimal email field → Next.js API → chosen provider.
+   - **Voting links:** clear links to **official Chaffey voting** when polls are open.
+
+## Compliance — do not violate
+
+- **No official CCSG or Chaffey College logos** — do not use or fake them.
+- **Candidate ID:** site must clearly name **Michael Zeta** and the office **Senator**.
+
+## Negative campaigning
+
+**Forbidden:** comparing Michael to others or disparaging opponents. **Issue-focused, positive messaging only.**

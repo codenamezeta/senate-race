@@ -1,17 +1,16 @@
-import { Geist, Geist_Mono, Outfit, Noto_Sans } from "next/font/google"
+import { Outfit, Noto_Sans } from "next/font/google"
 
 import "./globals.css"
+import { SiteNav } from "@/components/SiteNav"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const notoSansHeading = Noto_Sans({subsets:['latin'],variable:'--font-heading'});
-
-const outfit = Outfit({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const notoSansHeading = Noto_Sans({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-heading",
 })
+
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
 
 export default function RootLayout({
   children,
@@ -22,10 +21,18 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", outfit.variable, notoSansHeading.variable)}
+      className={cn(
+        "scroll-pt-20 scroll-smooth antialiased sm:scroll-pt-24",
+        "font-sans",
+        outfit.variable,
+        notoSansHeading.variable
+      )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SiteNav />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
