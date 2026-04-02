@@ -5,6 +5,8 @@ import { Hero } from "@/components/Hero"
 import { ProblemSolution } from "@/components/ProblemSolution"
 import { ValueProps } from "@/components/ValueProps"
 
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -16,6 +18,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="min-h-svh">
+      <Analytics />
+      <SpeedInsights />
       <Hero />
       <ValueProps />
       <ProblemSolution />
