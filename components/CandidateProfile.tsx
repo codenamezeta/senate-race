@@ -6,12 +6,7 @@ import {
   Route01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import {
-  useEffect,
-  useRef,
-  useState,
-  useSyncExternalStore,
-} from "react"
+import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -22,12 +17,12 @@ const pillars = [
     pull: "My path to this campus wasn't a straight line.",
     body: (
       <>
-        For over a decade, I worked as a music instructor, helping students
-        find their voices. Returning to school for a career change in
-        technology project management gave me a deep, personal appreciation for
-        the diverse paths we take. From recent high school graduates to adult
-        learners balancing coursework with careers and families, every student
-        deserves an empathetic advocate.
+        For over a decade, I worked as a music instructor, helping students find
+        their voices. Returning to school for a career change in technology
+        project management gave me a deep, personal appreciation for the diverse
+        paths we all take. From recent high school graduates to adult learners
+        balancing coursework with careers and families,{" "}
+        <strong>every student deserves an empathetic advocate.</strong>
       </>
     ),
     align: "left" as const,
@@ -56,8 +51,8 @@ const pillars = [
     body: (
       <>
         I am not going to promise to fix campus parking overnight. What I can
-        absolutely promise is my unwavering dedication. As the current VP of
-        the Recording Arts Club, I already know how to navigate Chaffey&apos;s
+        absolutely promise is my unwavering dedication. As the current VP of the
+        Recording Arts Club, I already know how to navigate Chaffey&apos;s
         systems. My goal is to serve as a reliable bridge between you and the
         administration, ensuring your concerns are amplified and acted upon.
       </>
@@ -119,7 +114,7 @@ export function CandidateProfile() {
       />
 
       <div
-        className="pointer-events-none absolute -top-24 -left-40 h-112 w-112 rounded-full bg-primary/20 blur-3xl motion-safe:animate-[candidate-blob-drift_26s_ease-in-out_infinite] dark:bg-primary/30"
+        className="pointer-events-none absolute -top-24 -left-40 h-112 w-md rounded-full bg-primary/20 blur-3xl motion-safe:animate-[candidate-blob-drift_26s_ease-in-out_infinite] dark:bg-primary/30"
         aria-hidden
       />
       <div
@@ -135,9 +130,7 @@ export function CandidateProfile() {
         <header
           className={cn(
             "mx-auto max-w-4xl text-center transition-all duration-1000 ease-out motion-reduce:transition-none",
-            revealed
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
+            revealed ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           )}
         >
           <p className="text-xs font-bold tracking-[0.2em] text-primary uppercase dark:text-blue-400">
@@ -145,11 +138,11 @@ export function CandidateProfile() {
           </p>
           <h2
             id="candidate-heading"
-            className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-foreground text-pretty md:text-4xl lg:text-5xl lg:leading-[1.08]"
+            className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl lg:text-5xl lg:leading-[1.08]"
           >
             Leadership is about support, not a shiny title.
           </h2>
-          <p className="mx-auto mt-8 max-w-3xl border-l-4 border-accent py-1 pl-6 text-left text-lg font-medium leading-relaxed text-foreground/90 italic md:text-xl md:leading-relaxed lg:text-[1.35rem]">
+          <p className="mx-auto mt-8 max-w-3xl border-l-4 border-accent py-1 pl-6 text-left text-lg leading-relaxed font-medium text-foreground/90 italic md:text-xl md:leading-relaxed lg:text-[1.35rem]">
             I believe a representative&apos;s only job is to ask, &apos;What do
             you need to succeed?&apos; and then go to work figuring out how to
             make it happen.
@@ -164,15 +157,15 @@ export function CandidateProfile() {
                 key={item.kicker}
                 className={cn(
                   "group relative overflow-hidden transition-all duration-700 ease-out motion-reduce:transition-none",
-                  item.align === "left" && "md:mr-auto md:max-w-[92%] lg:max-w-[88%]",
+                  item.align === "left" &&
+                    "md:mr-auto md:max-w-[92%] lg:max-w-[88%]",
                   item.align === "right" &&
                     "md:ml-auto md:max-w-[92%] lg:max-w-[88%]",
                   item.align === "center" && "mx-auto w-full max-w-4xl",
                   revealed
                     ? "translate-y-0 opacity-100"
                     : "translate-y-12 opacity-0",
-                  item.featured &&
-                    "md:scale-[1.02] motion-reduce:md:scale-100"
+                  item.featured && "md:scale-[1.02] motion-reduce:md:scale-100"
                 )}
                 style={{
                   transitionDelay:
@@ -220,7 +213,7 @@ export function CandidateProfile() {
                       <p className="text-xs font-bold tracking-[0.14em] text-primary uppercase dark:text-blue-400">
                         {item.kicker}
                       </p>
-                      <p className="mt-3 font-heading text-xl font-bold leading-snug text-pretty text-foreground md:text-2xl">
+                      <p className="mt-3 font-heading text-xl leading-snug font-bold text-pretty text-foreground md:text-2xl">
                         <span className="text-accent">&ldquo;</span>
                         {item.pull}
                         <span className="text-accent">&rdquo;</span>

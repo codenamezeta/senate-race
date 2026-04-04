@@ -1,6 +1,7 @@
 import { ActionHub } from "@/components/ActionHub"
 import { CandidateProfile } from "@/components/CandidateProfile"
 import { FAQ } from "@/components/FAQ"
+import { Feedback } from "@/components/Feedback"
 import { Testimonials } from "@/components/Testimonials"
 import { Hero } from "@/components/Hero"
 import { ProblemAgitation } from "@/components/ProblemAgitation"
@@ -26,6 +27,7 @@ export default function Page() {
       <ProblemAgitation />
       <CandidateProfile />
       <Testimonials />
+      <Feedback />
       <FAQ />
       <ActionHub />
     </main>
