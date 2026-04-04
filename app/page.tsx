@@ -1,9 +1,10 @@
 import { ActionHub } from "@/components/ActionHub"
 import { CandidateProfile } from "@/components/CandidateProfile"
 import { FAQ } from "@/components/FAQ"
+import { Testimonials } from "@/components/Testimonials"
 import { Hero } from "@/components/Hero"
-import { ProblemSolution } from "@/components/ProblemSolution"
-import { ValueProps } from "@/components/ValueProps"
+import { ProblemAgitation } from "@/components/ProblemAgitation"
+import { WhyVote } from "@/components/WhyVote"
 
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -21,9 +22,10 @@ export default function Page() {
       <Analytics />
       <SpeedInsights />
       <Hero />
-      <ValueProps />
-      <ProblemSolution />
+      <WhyVote />
+      <ProblemAgitation />
       <CandidateProfile />
+      <Testimonials />
       <FAQ />
       <ActionHub />
     </main>

@@ -121,7 +121,7 @@ export function ActionHub() {
                   type="submit"
                   size="lg"
                   disabled={status === "loading"}
-                  className="h-12 shrink-0 border-0 bg-yellow-400 px-6 font-bold text-black hover:bg-yellow-500 disabled:opacity-60 sm:px-8"
+                  className="h-12 shrink-0 border-0 bg-accent px-6 font-bold text-black hover:bg-yellow-500 disabled:opacity-60 sm:px-8"
                 >
                   {status === "loading" ? "Sending…" : "Remind Me to Vote"}
                 </Button>

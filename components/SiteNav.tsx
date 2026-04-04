@@ -45,7 +45,7 @@ export function SiteNav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 shadow-xs backdrop-blur-md supports-backdrop-filter:bg-background/75">
-      <div className="relative mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6 lg:px-8">
+      <div className="relative container mx-auto flex h-14 items-center justify-between gap-4 px-4 sm:h-16">
         <Link
           href="#top"
           className="flex shrink-0 items-center gap-2 rounded-md focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
@@ -59,7 +59,7 @@ export function SiteNav() {
             className="size-9 sm:size-10"
             priority
           />
-          <span className="sr-only">Michael Zeta — Student Senator</span>
+          <span className="sr-only">Michael Zeta | Student Senator</span>
         </Link>
 
         <nav
