@@ -165,7 +165,7 @@ export function Hero() {
               {/* Tall box + object-bottom: large portrait; section overflow-y-clip catches drop-shadow past border — avoid overflow-hidden here (clips head with scale/transform) */}
               <div className="relative h-[min(58vh,28rem)] w-full sm:h-[min(62vh,30rem)] md:h-[min(68vh,40rem)] lg:h-[min(72vh,44rem)]">
                 <Image
-                  src="/images/popout-5.png"
+                  src="/images/popout-3.png"
                   alt="Michael Zeta, candidate for Student Senator"
                   fill
                   className="object-contain object-bottom filter-[drop-shadow(0_18px_36px_color-mix(in_oklab,var(--color-primary)_34%,transparent))]"

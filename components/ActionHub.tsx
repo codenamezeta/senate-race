@@ -2,9 +2,11 @@
 
 import { useState, type FormEvent } from "react"
 
+import { ThemeToggle } from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import { submitVoteReminder } from "@/lib/submit-vote-reminder"
 import { getGoogleCalendarVoteUrl, voteIcsPath } from "@/lib/vote-calendar"
+import { ShareThisPage } from "./ShareThisPage"
 
 export function ActionHub() {
   const [status, setStatus] = useState<
@@ -39,10 +41,10 @@ export function ActionHub() {
     <section
       id="action-hub"
       aria-labelledby="action-hub-heading"
-      className="bg-primary py-20 text-white md:py-24"
+      className="bg-primary pt-24 text-white md:pt-24"
       tabIndex={-1}
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <header className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
           <h2
             id="action-hub-heading"
@@ -100,6 +102,9 @@ export function ActionHub() {
             <p className="text-sm font-semibold tracking-wide text-blue-100 uppercase">
               Email reminder
             </p>
+            <p className="text-xs text-primary-foreground/50">
+              Enter an email address to receive a reminder when polls open.
+            </p>
             <form
               className="mt-4 w-full max-w-md space-y-3 md:max-w-none"
               onSubmit={handleSubmit}
@@ -114,7 +119,7 @@ export function ActionHub() {
                   type="email"
                   required
                   autoComplete="email"
-                  placeholder="your.email@student.chaffey.edu"
+                  placeholder="your.email@example.com"
                   className="min-h-12 min-w-0 flex-1 rounded-lg border-0 bg-white px-4 py-3 text-base text-gray-900 shadow-sm placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:outline-none"
                 />
                 <Button
@@ -138,8 +143,16 @@ export function ActionHub() {
             </form>
           </div>
         </div>
-
-        <p className="mx-auto mt-14 max-w-3xl text-center text-sm leading-relaxed text-blue-100/90 md:mt-16">
+      </div>
+      <div
+        id="socket"
+        className="flex flex-col justify-center bg-linear-to-b from-primary to-black py-12"
+      >
+        <div className="mx-auto mb-8 flex items-center justify-center gap-4">
+          <ThemeToggle variant="onPrimary" className="" />
+          <ShareThisPage className="text-foreground hover:bg-primary/10 hover:text-primary-foreground" />
+        </div>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-pretty text-blue-100/90">
           Paid for by Michael Zeta for Student Senator. Remember to review the
           official CCSG voting portal on April 20.
         </p>

@@ -3,12 +3,15 @@
 import {
   BridgeIcon,
   HandHelpingIcon,
+  Megaphone01Icon,
   Route01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
+import { Button } from "./ui/button"
 
 const pillars = [
   {
@@ -129,24 +132,63 @@ export function CandidateProfile() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header
           className={cn(
-            "mx-auto max-w-4xl text-center transition-all duration-1000 ease-out motion-reduce:transition-none",
+            "mx-auto grid max-w-4xl grid-cols-1 gap-8 text-center transition-all duration-1000 ease-out motion-reduce:transition-none",
+            "lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_min(260px,28vw)] lg:gap-2 lg:gap-x-14 lg:text-left",
             revealed ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           )}
         >
-          <p className="text-xs font-bold tracking-[0.2em] text-primary uppercase dark:text-blue-400">
+          <p className="text-xs font-bold tracking-[0.2em] text-primary uppercase lg:col-start-1 lg:row-start-1 dark:text-blue-400">
             The solution
           </p>
+
+          <figure className="mx-auto w-full max-w-[220px] justify-self-center sm:max-w-[260px] lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:mx-0 lg:max-w-none lg:self-start lg:justify-self-end">
+            <div
+              className={cn(
+                "relative aspect-4/5 w-full overflow-hidden rounded-3xl border-2 border-primary/70 bg-card/60 bg-linear-to-tl from-primary/50 to-accent/25 shadow-lg ring-1 ring-primary/15 backdrop-blur-sm dark:bg-card/40 dark:ring-primary/25",
+                revealed
+                  ? "motion-safe:animate-[candidate-portrait-in_0.85s_ease-out_both]"
+                  : "opacity-0"
+              )}
+            >
+              <Image
+                src="/images/popout-5.png"
+                alt="Michael Zeta, candidate for student senator"
+                width={520}
+                height={650}
+                sizes="(max-width: 1024px) 260px, 280px"
+                className="h-full w-full object-contain object-bottom px-1 sm:px-2"
+                priority={false}
+              />
+            </div>
+          </figure>
+
           <h2
             id="candidate-heading"
-            className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl lg:text-5xl lg:leading-[1.08]"
+            className="mt-1 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl lg:col-start-1 lg:row-start-2 lg:mt-5 lg:max-w-3xl lg:text-5xl lg:leading-[1.08]"
           >
             Leadership is about support, not a shiny title.
           </h2>
-          <p className="mx-auto mt-8 max-w-3xl border-l-4 border-accent py-1 pl-6 text-left text-lg leading-relaxed font-medium text-foreground/90 italic md:text-xl md:leading-relaxed lg:text-[1.35rem]">
-            I believe a representative&apos;s only job is to ask, &apos;What do
-            you need to succeed?&apos; and then go to work figuring out how to
-            make it happen.
-          </p>
+          <blockquote className="mx-auto mb-6 max-w-3xl border-l-4 border-accent py-1 pl-6 text-left text-lg leading-relaxed font-medium text-foreground/90 italic md:text-xl md:leading-relaxed lg:col-start-1 lg:row-start-3 lg:mx-0 lg:mt-8 lg:text-[1.35rem]">
+            I believe a representative&apos;s only job is to ask, &apos;
+            <strong>What do you need to succeed?</strong>&apos; and then go to
+            work figuring out how to make that happen.
+          </blockquote>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="mr-auto h-12 border-primary/40 px-6 font-semibold text-foreground hover:bg-primary/10 sm:px-8"
+          >
+            <a href="#feedback">
+              <HugeiconsIcon
+                icon={Megaphone01Icon}
+                size={28}
+                strokeWidth={1.5}
+                aria-hidden
+              />
+              <span>Tell me what you need</span>
+            </a>
+          </Button>
         </header>
 
         <div className="mt-16 flex flex-col gap-10 md:mt-20 md:gap-14 lg:gap-16">

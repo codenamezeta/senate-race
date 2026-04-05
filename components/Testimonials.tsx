@@ -4,18 +4,18 @@ import { HugeiconsIcon } from "@hugeicons/react"
 const placeholders = [
   {
     quote:
-      "[Placeholder] Short quote from a fellow student about campus advocacy and feeling heard — real testimonial coming soon.",
-    attribution: "Chaffey student · name TBD",
+      "Working on a semester-long group project with Michael showed me what true teamwork looks like. Even while balancing his own heavy schedule, he was always the first to step up, organize our workflow, and make sure everyone's ideas were included. He understands the daily grind of community college students better than anyone.",
+    attribution: "Melissa Perez · Theater Major",
   },
   {
     quote:
-      "[Placeholder] Peer perspective on student leadership and follow-through — replace with an actual quote when ready.",
-    attribution: "Student leader · name TBD",
+      "As Vice President of our club, Michael never makes it about his own ego. He always starts by asking what resources we need for our projects and then actually follows through with the administration to get them. He’s exactly the kind of grounded, highly organized leader the Student Senate needs right now.",
+    attribution: "Christine Diaz · CRAC President",
   },
   {
     quote:
-      "[Placeholder] Faculty or staff line on character, reliability, or how you show up for students — pending approval.",
-    attribution: "Professor or staff · name TBD",
+      "I have worked with Michael on several complex technical projects, and his ability to actively listen, adapt, and solve problems is unmatched. He doesn't just manage tasks, he genuinely cares about the long-term success of the people he's working with. I have no doubt he will bring that same relentless advocacy to CCSG.",
+    attribution: "Sharon Alton · Professor of English & Critical Thinking",
   },
 ] as const
 
@@ -28,18 +28,18 @@ export function Testimonials() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-foreground/80 uppercase">
-            Testimonials
+          <p className="text-xs font-bold tracking-[0.16em] text-primary-foreground/80 uppercase">
+            Endorsements
           </p>
           <h2
             id="testimonials-heading"
-            className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-foreground text-pretty md:text-4xl"
+            className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-pretty text-primary-foreground md:text-4xl"
           >
-            Voices from campus
+            Voices from Campus
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-foreground/85 md:text-lg">
-            Real quotes from students and faculty are on the way. For now,
-            here&apos;s how this section will look once approvals are in.
+          <p className="mt-4 text-base leading-relaxed text-pretty text-primary-foreground/85 md:text-lg">
+            Real quotes from students and faculty. Hear what they have to say
+            about Michael Zeta.
           </p>
         </div>
 
@@ -51,7 +51,11 @@ export function Testimonials() {
                   className="mb-4 text-primary dark:text-blue-400"
                   aria-hidden
                 >
-                  <HugeiconsIcon icon={QuoteUpIcon} size={28} strokeWidth={1.5} />
+                  <HugeiconsIcon
+                    icon={QuoteUpIcon}
+                    size={28}
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <blockquote className="flex-1 text-base leading-relaxed text-muted-foreground italic md:text-[0.95rem] md:leading-relaxed">
                   &ldquo;{item.quote}&rdquo;

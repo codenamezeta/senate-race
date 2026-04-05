@@ -1,3 +1,9 @@
+"use client"
+
+import { useState, type FormEvent } from "react"
+import { submitVoteReminder } from "@/lib/submit-vote-reminder"
+import { getGoogleCalendarVoteUrl, voteIcsPath } from "@/lib/vote-calendar"
+
 import {
   FlashIcon,
   Megaphone01Icon,
@@ -5,6 +11,7 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ReactNode } from "react"
+import { Button } from "./ui/button"
 
 const blocks: readonly {
   step: string
@@ -90,6 +97,33 @@ const blocks: readonly {
 ]
 
 export function WhyVote() {
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle")
+  const [message, setMessage] = useState("")
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const raw = new FormData(form).get("email")
+    const email = typeof raw === "string" ? raw.trim() : ""
+
+    setStatus("loading")
+    setMessage("")
+
+    const result = await submitVoteReminder(email)
+
+    if (result.ok) {
+      setStatus("success")
+      setMessage("You're in—we'll remind you when polls open.")
+      form.reset()
+    } else {
+      setStatus("error")
+      setMessage(result.error)
+    }
+  }
+
+  const googleUrl = getGoogleCalendarVoteUrl()
   return (
     <section
       id="whys"
@@ -122,10 +156,10 @@ export function WhyVote() {
         </div>
       </div>
 
-      <div className="relative bg-background">
+      <div className="relative bg-linear-to-tl from-primary/10 to-transparent">
         {/* <div className="absolute top-0 right-0 left-0 z-20 h-60 bg-linear-to-b from-primary to-transparent" /> */}
         <div
-          className="pointer-events-none absolute top-0 right-0 left-0 h-px bg-linear-to-r from-transparent via-accent/55 to-transparent"
+          className="pointer-events-none absolute right-0 bottom-0 left-0 z-50 h-[2px] bg-linear-to-r from-transparent via-accent to-transparent opacity-80 dark:via-accent/90 dark:opacity-100"
           aria-hidden
         />
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16 lg:px-8 lg:py-24">
@@ -177,6 +211,79 @@ export function WhyVote() {
               </li>
             ))}
           </ol>
+        </div>
+        <div className="mx-auto flex flex-col items-center justify-between gap-x-6 px-4 pb-12 text-center md:items-start lg:flex-row xl:max-w-7xl xl:gap-x-12 xl:px-3">
+          <div className="flex w-full flex-1 flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+              Email reminder
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Enter your email address to receive a reminder when polls open.
+            </p>
+            <form className="w-full" onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+                <label htmlFor="action-hub-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="action-hub-email"
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  placeholder="your.email@example.com"
+                  className="min-h-12 min-w-0 flex-1 rounded-lg border-0 bg-white px-4 py-3 text-base text-gray-900 shadow-sm placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:outline-none"
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={status === "loading"}
+                  className="h-12 shrink-0 border-0 bg-primary px-6 font-bold text-primary-foreground hover:bg-blue-700 disabled:opacity-60 sm:px-8"
+                >
+                  {status === "loading" ? "Sending…" : "Remind Me to Vote"}
+                </Button>
+              </div>
+              <p
+                className="min-h-5 text-left text-sm text-blue-100"
+                role="status"
+                aria-live="polite"
+              >
+                {status === "success" || status === "error"
+                  ? message
+                  : "\u00a0"}
+              </p>
+            </form>
+          </div>
+          <div className="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+              When to vote
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Voting polls open on Monday, April 20 at 8:00 AM and close on
+              Thursday, April 23 at 4:00 PM.
+            </p>
+            <div className="flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:justify-start">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-12 px-6 sm:px-8"
+              >
+                <a href={googleUrl} target="_blank" rel="noopener noreferrer">
+                  Add to Google Calendar
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 bg-accent px-6 text-black hover:bg-yellow-500 sm:px-8"
+              >
+                <a href={voteIcsPath} download>
+                  Download .ics (Apple &amp; Outlook)
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
