@@ -100,7 +100,7 @@ export function Hero() {
             <span className="text-primary"> call the shots</span>.
           </h1>
           <p
-            className={`mt-6 max-w-4xl text-lg leading-relaxed text-foreground/90 md:text-xl md:leading-relaxed ${motionEnter.text} motion-safe:[animation-delay:240ms]`}
+            className={`my-6 max-w-4xl text-lg leading-relaxed text-foreground/90 md:text-xl md:leading-relaxed ${motionEnter.text} motion-safe:[animation-delay:240ms]`}
           >
             Between core classes, shifts at work, and real life, voting in a
             student election is probably the last thing on your mind. My name is{" "}
@@ -110,22 +110,25 @@ export function Hero() {
             is the easiest way to protect your money, your rights, and your
             hustle.
           </p>
-
+          <p className="w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75 dark:text-blue-700">
+            Receive a reminder when polls open.
+          </p>
           <form
-            className={`mt-6 flex w-full flex-col gap-3 space-y-3 md:flex-row md:items-stretch ${motionEnter.text} motion-safe:[animation-delay:340ms]`}
+            className={`flex w-full flex-col gap-3 space-y-3 md:flex-row md:items-stretch ${motionEnter.text} motion-safe:[animation-delay:340ms]`}
             onSubmit={handleSubmit}
           >
             <label htmlFor="action-hub-email" className="sr-only">
               Email address
             </label>
+
             <input
               id="action-hub-email"
               name="email"
               type="email"
               required
               autoComplete="email"
-              placeholder="your.email@panther.chaffey.edu"
-              className="min-h-12 min-w-0 flex-1 rounded-lg border-0 bg-white px-4 py-3 text-base text-gray-900 shadow-sm placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:outline-none"
+              placeholder="your.email@example.com"
+              className="mx-0 min-h-12 min-w-0 flex-1 rounded-lg border-0 bg-white p-3 text-base text-gray-900 shadow-sm placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:outline-none"
             />
             <Button
               type="submit"
@@ -144,6 +147,9 @@ export function Hero() {
               {status === "success" || status === "error" ? message : "\u00a0"}
             </p>
           </form>
+          <p className="-mt-2 w-full px-1 text-left text-xs text-muted-foreground">
+            Your info is never shared.
+          </p>
         </div>
 
         {/* Portrait: md+ fills row height and pins to bottom so feet align with section; no inner overflow clip (was cutting hair) */}

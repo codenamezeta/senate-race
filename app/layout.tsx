@@ -14,6 +14,35 @@ const notoSansHeading = Noto_Sans({
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
+  title: "Michael Zeta | Candidate for Chaffey College Student Senator",
+  description:
+    "I'm Michael Zeta, running for Student Senator at Chaffey College for the 2026-2027 academic year. Learn how I plan to protect your 9+1 rights, manage student fees, and be a peer—not a politician.",
+  keywords: [
+    "Michael Zeta",
+    "Chaffey College",
+    "CCSG Elections",
+    "Student Senator",
+    "Rancho Cucamonga",
+    "Chaffey Student Government",
+    "2026 CCSG Elections",
+  ],
+  openGraph: {
+    title: "Michael Zeta for Student Senator",
+    description:
+      "Protecting your money, your rights, and your hustle at Chaffey College. Polls open online April 20-23.",
+    url: "https://michaelzeta.com",
+    siteName: "Michael Zeta Campaign",
+    images: [
+      {
+        url: "/images/favicons/apple-touch-icon.png", // Use your best logo or headshot here for link previews
+        width: 512,
+        height: 512,
+        alt: "Michael Zeta Campaign Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
     icon: [
       { url: "/images/favicons/favicon.ico" },
