@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Michael Zeta Campaign",
     images: [
       {
-        url: "/images/favicons/apple-touch-icon.png", // Use your best logo or headshot here for link previews
+        url: "/images/preview.png", // Use your best logo or headshot here for link previews
         width: 512,
         height: 512,
         alt: "Michael Zeta Campaign Logo",
