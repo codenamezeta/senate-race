@@ -110,7 +110,7 @@ export function Hero() {
             is the easiest way to protect your money, your rights, and your
             hustle.
           </p>
-          <p className="w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75 dark:text-blue-700">
+          <p className="w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75 dark:text-blue-7d00">
             Receive a reminder when polls open.
           </p>
           <form

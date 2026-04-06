@@ -4,18 +4,38 @@ import { HugeiconsIcon } from "@hugeicons/react"
 const placeholders = [
   {
     quote:
-      "Working on a semester-long group project with Michael showed me what true teamwork looks like. Even while balancing his own heavy schedule, he was always the first to step up, organize our workflow, and make sure everyone's ideas were included. He understands the daily grind of community college students better than anyone.",
-    attribution: "Melissa Perez · Theater Major",
+      "I have worked closely with Michael in his role as Vice President of the Recording Arts Club where he has shown himself to be incredibly reliable. Whenever we face a last-minute challenge or need someone to step up and advocate for the club, Michael is always ready to take the lead. He completely checks his ego at the door and focuses on getting the job done. I wholeheartedly endorse him for Student Senator.",
+    attribution: (
+      <>
+        <p className="font-bold">Christine Dias</p>
+        <p className="text-sm text-muted-foreground">
+          {" "}
+          President · Chaffey Recording Arts Club
+        </p>
+      </>
+    ),
   },
   {
     quote:
-      "As Vice President of our club, Michael never makes it about his own ego. He always starts by asking what resources we need for our projects and then actually follows through with the administration to get them. He’s exactly the kind of grounded, highly organized leader the Student Senate needs right now.",
-    attribution: "Christine Diaz · CRAC President",
+      "In the theater group, you quickly learn who you can rely on when things get stressful. Michael is always that person. He doesn’t need to be the center of attention; he just wants the whole production to succeed and makes sure everyone has what they need. He's exactly the kind of supportive, grounded leader we need in student government.",
+    attribution: (
+      <>
+        <p className="font-bold">Melissa Perez</p>
+        <p className="text-sm text-muted-foreground"> Theater Major</p>
+      </>
+    ),
   },
   {
     quote:
-      "I have worked with Michael on several complex technical projects, and his ability to actively listen, adapt, and solve problems is unmatched. He doesn't just manage tasks, he genuinely cares about the long-term success of the people he's working with. I have no doubt he will bring that same relentless advocacy to CCSG.",
-    attribution: "Sharon Alton · Professor of English & Critical Thinking",
+      "When I was completely overwhelmed with essays for my honors classes, Michael was the first person to step up and help me review my work. He didn't have to take time out of his own busy schedule to do it, but that's just who he is—he genuinely wants to see his peers succeed. He is exactly the kind of advocate Chaffey students need.",
+    attribution: (
+      <>
+        <p className="font-bold">Abby Lynn</p>
+        <p className="text-sm text-muted-foreground">
+          English Honors Student · Chaffey College
+        </p>
+      </>
+    ),
   },
 ] as const
 
@@ -28,7 +48,7 @@ export function Testimonials() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-primary-foreground/80 uppercase">
+          <p className="text-xs font-bold tracking-[0.16em] text-primary-foreground uppercase">
             Endorsements
           </p>
           <h2
@@ -37,15 +57,15 @@ export function Testimonials() {
           >
             Voices from Campus
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-pretty text-primary-foreground/85 md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-pretty text-primary-foreground md:text-lg">
             Real quotes from students and faculty. Hear what they have to say
             about Michael Zeta.
           </p>
         </div>
 
         <ul className="mt-12 grid list-none gap-6 md:mt-14 md:grid-cols-3 md:gap-5 lg:gap-6">
-          {placeholders.map((item) => (
-            <li key={item.attribution}>
+          {placeholders.map((item, index) => (
+            <li key={index}>
               <figure className="flex h-full flex-col rounded-2xl border border-foreground/12 bg-background/95 p-6 shadow-md backdrop-blur-sm dark:border-border/80 dark:bg-card/95 dark:shadow-lg">
                 <div
                   className="mb-4 text-primary dark:text-blue-400"

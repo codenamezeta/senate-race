@@ -56,7 +56,7 @@ export function SiteNav() {
             alt="Michael Zeta — Student Senator"
             width={40}
             height={40}
-            className="size-9 sm:size-10"
+            className="size-9 sm:size-10 dark:invert"
             priority
           />
           <span className="sr-only">Michael Zeta | Student Senator</span>
