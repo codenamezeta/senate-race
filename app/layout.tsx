@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/preview.png", // Use your best logo or headshot here for link previews
-        width: 512,
-        height: 512,
-        alt: "Michael Zeta Campaign Logo",
+        width: 1920,
+        height: 1080,
+        alt: "Michael Zeta for Student Senator",
       },
     ],
     locale: "en_US",
