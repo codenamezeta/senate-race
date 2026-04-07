@@ -17,10 +17,10 @@ const placeholders = [
   },
   {
     quote:
-      "In the theater group, you quickly learn who you can rely on when things get stressful. Michael is always that person. He doesn’t need to be the center of attention; he just wants the whole production to succeed and makes sure everyone has what they need. He's exactly the kind of supportive, grounded leader we need in student government.",
+      "Whatever Michael does, he approaches it with genuine friendliness and compassion. He is an incredible listener who is always willing to step up, assist, or advocate for others when they need it most. I’ve seen so many of our peers go to him for advice because they deeply respect his perspective. He shows exactly the kind of grounded leadership skills we need at Chaffey, and I know he will do an amazing job as our Student Senator.",
     attribution: (
       <>
-        <p className="font-bold">Melissa Perez</p>
+        <p className="font-bold">Melissa P.</p>
         <p className="text-sm text-muted-foreground"> Theater Major</p>
       </>
     ),
