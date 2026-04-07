@@ -21,7 +21,9 @@ const placeholders = [
     attribution: (
       <>
         <p className="font-bold">Melissa P.</p>
-        <p className="text-sm text-muted-foreground"> Theater Major</p>
+        <p className="text-sm text-muted-foreground">
+          Theater Major · Chaffey College
+        </p>
       </>
     ),
   },
