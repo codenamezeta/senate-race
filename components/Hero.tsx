@@ -4,6 +4,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { submitVoteReminder } from "@/lib/submit-vote-reminder"
 import { FormEvent, useState } from "react"
+// import { Megaphone01Icon } from "@hugeicons/core-free-icons"
+// import { HugeiconsIcon } from "@hugeicons/react"
 
 const motionEnter = {
   text: "opacity-0 motion-safe:animate-[hero-fade-up_0.75s_cubic-bezier(0.22,1,0.36,1)_forwards] motion-reduce:animate-none motion-reduce:opacity-100",
@@ -110,7 +112,23 @@ export function Hero() {
             is the easiest way to protect your money, your rights, and your
             hustle.
           </p>
-          <p className="w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75 dark:text-blue-7d00">
+          {/* <Button
+            asChild
+            variant="default"
+            size="lg"
+            className="mx-auto mb-6 h-12 border-accent/40 px-6 font-semibold text-primary-foreground lg:mr-auto lg:ml-0"
+          >
+            <a href="#feedback">
+              <HugeiconsIcon
+                icon={Megaphone01Icon}
+                size={28}
+                strokeWidth={1.5}
+                aria-hidden
+              />
+              <span>Tell me what you need</span>
+            </a>
+          </Button> */}
+          <p className="dark:text-blue-7d00 w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75">
             Receive a reminder when polls open.
           </p>
           <form
@@ -148,7 +166,7 @@ export function Hero() {
             </p>
           </form>
           <p className="-mt-2 w-full px-1 text-left text-xs text-muted-foreground">
-            Your info is never shared.
+            Your info is never shared
           </p>
         </div>
 
@@ -182,7 +200,6 @@ export function Hero() {
             </figure>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </section>
   )

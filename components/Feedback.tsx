@@ -81,13 +81,13 @@ export function Feedback() {
     <section
       id="feedback"
       aria-labelledby="feedback-heading"
-      className="scroll-mt-20 border-y border-border/60 bg-linear-to-tl from-accent/20 to-transparent py-16 sm:scroll-mt-24 md:py-20"
+      className="scroll-mt-20 border-y border-border/60 bg-linear-to-bl from-primary/50 via-transparent to-accent/20 py-16 sm:scroll-mt-24 md:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <Card className="order-2 border-border/80 bg-card shadow-md md:order-1 dark:border-border dark:shadow-lg">
             <CardHeader className="pb-2">
-              <CardTitle className="font-heading text-lg font-bold text-foreground">
+              <CardTitle className="font-heading text-xl font-bold text-foreground">
                 Message Michael Zeta
               </CardTitle>
               <CardDescription>
@@ -158,15 +158,15 @@ export function Feedback() {
                 >
                   {status === "loading" ? "Sending…" : "Send to Michael"}
                 </Button>
-                <p
-                  className="min-h-5 text-sm text-muted-foreground"
-                  role="status"
-                  aria-live="polite"
-                >
-                  {status === "success" || status === "error"
-                    ? statusMessage
-                    : "\u00a0"}
-                </p>
+                {(status === "success" || status === "error") && (
+                  <p
+                    className="min-h-5 text-sm text-muted-foreground"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {statusMessage ? statusMessage : "\u00a0"}
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>

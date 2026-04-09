@@ -21,7 +21,10 @@ export async function submitVoteReminder(
   if (!res.ok) {
     return {
       ok: false,
-      error: typeof data.error === "string" ? data.error : "Something went wrong.",
+      error:
+        typeof data.error === "string"
+          ? data.error
+          : "Sorry, something went wrong. Please try again later.",
     }
   }
 

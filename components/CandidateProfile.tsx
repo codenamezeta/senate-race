@@ -141,7 +141,7 @@ export function CandidateProfile() {
             The solution
           </p>
 
-          <figure className="mx-auto w-full max-w-[220px] justify-self-center sm:max-w-[260px] lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:mx-0 lg:max-w-none lg:self-start lg:justify-self-end">
+          <figure className="mx-auto w-full max-w-[220px] justify-self-center sm:max-w-[260px] lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:mx-0 lg:max-w-none lg:min-w-[300px] lg:self-start lg:justify-self-end">
             <div
               className={cn(
                 "relative aspect-4/5 w-full overflow-hidden rounded-3xl border-2 border-primary/70 bg-card/60 bg-linear-to-tl from-primary/50 to-accent/25 shadow-lg ring-1 ring-primary/15 backdrop-blur-sm dark:bg-card/40 dark:ring-primary/25",
@@ -164,7 +164,7 @@ export function CandidateProfile() {
 
           <h2
             id="candidate-heading"
-            className="mt-1 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl lg:col-start-1 lg:row-start-2 lg:mt-5 lg:max-w-3xl lg:text-5xl lg:leading-[1.08]"
+            className="mt-1 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl lg:col-start-1 lg:row-start-2 lg:mt-5 lg:max-w-2xl lg:text-5xl lg:leading-[1.08]"
           >
             Leadership is about support, not a shiny title.
           </h2>
@@ -175,9 +175,9 @@ export function CandidateProfile() {
           </blockquote>
           <Button
             asChild
-            variant="outline"
+            variant="default"
             size="lg"
-            className="mr-auto h-12 border-primary/40 px-6 font-semibold text-foreground hover:bg-primary/10 sm:px-8"
+            className="mx-auto h-12 border-accent/40 px-6 font-semibold text-primary-foreground lg:mr-auto lg:ml-0"
           >
             <a href="#feedback">
               <HugeiconsIcon

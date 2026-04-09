@@ -22,7 +22,7 @@ const placeholders = [
       <>
         <p className="font-bold">Melissa P.</p>
         <p className="text-sm text-muted-foreground">
-          Theater Major · Chaffey College
+          Theater Major & Stage Manager · Chaffey College
         </p>
       </>
     ),
@@ -39,6 +39,18 @@ const placeholders = [
       </>
     ),
   },
+  {
+    quote:
+      "Michael would make an excellent CCSG senator! As a student in my Spanish class, Michael was collaborative, cooperative and showed great determination to achieve his goals!  He values each student's success, so he will be a great advocate for his peers!",
+    attribution: (
+      <>
+        <p className="font-bold">Profesora Hanna</p>
+        <p className="text-sm text-muted-foreground">
+          Spanish Professor · Chaffey College
+        </p>
+      </>
+    ),
+  },
 ] as const
 
 export function Testimonials() {
@@ -46,40 +58,41 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="scroll-mt-20 border-y border-accent/50 bg-accent py-16 sm:scroll-mt-24 md:py-20 dark:border-accent/35 dark:bg-accent/15"
+      className="scroll-mt-20 border-y border-accent/50 bg-accent/50 py-16 sm:scroll-mt-24 md:py-20 dark:border-accent/35 dark:bg-accent/15"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-primary-foreground uppercase">
+          <p className="text-xs font-bold tracking-[0.16em] text-foreground uppercase">
             Endorsements
           </p>
           <h2
             id="testimonials-heading"
-            className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-pretty text-primary-foreground md:text-4xl"
+            className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-pretty text-foreground md:text-4xl"
           >
             Voices from Campus
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-pretty text-primary-foreground md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-pretty text-foreground md:text-lg">
             Real quotes from students and faculty. Hear what they have to say
             about Michael Zeta.
           </p>
         </div>
 
-        <ul className="mt-12 grid list-none gap-6 md:mt-14 md:grid-cols-3 md:gap-5 lg:gap-6">
+        <ul className="mt-12 grid list-none gap-6 md:mt-14 md:grid-cols-2 md:gap-5 lg:gap-3">
           {placeholders.map((item, index) => (
             <li key={index}>
-              <figure className="flex h-full flex-col rounded-2xl border border-foreground/12 bg-background/95 p-6 shadow-md backdrop-blur-sm dark:border-border/80 dark:bg-card/95 dark:shadow-lg">
+              <figure className="flex h-full flex-col rounded-2xl border border-foreground/12 bg-background/95 px-12 pt-12 pb-6 shadow-md backdrop-blur-sm dark:border-border/80 dark:bg-card/95 dark:shadow-lg">
                 <div
-                  className="mb-4 text-primary dark:text-blue-400"
+                  className="absolute top-3 left-3 mb-4 text-primary dark:text-blue-400"
                   aria-hidden
                 >
                   <HugeiconsIcon
                     icon={QuoteUpIcon}
-                    size={28}
-                    strokeWidth={1.5}
+                    size={100}
+                    strokeWidth={3}
+                    className="opacity-5"
                   />
                 </div>
-                <blockquote className="flex-1 text-base leading-relaxed text-muted-foreground italic md:text-[0.95rem] md:leading-relaxed">
+                <blockquote className="flex-1 text-sm leading-relaxed text-foreground italic md:text-base md:leading-relaxed">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 border-t border-border pt-4 text-sm font-semibold text-foreground not-italic">

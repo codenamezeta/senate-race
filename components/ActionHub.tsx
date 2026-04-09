@@ -41,7 +41,7 @@ export function ActionHub() {
     <section
       id="action-hub"
       aria-labelledby="action-hub-heading"
-      className="bg-primary pt-24 text-white md:pt-24"
+      className="scroll-mt-20 bg-primary pt-24 text-white sm:scroll-mt-24 md:pt-24"
       tabIndex={-1}
     >
       <div className="container mx-auto">
