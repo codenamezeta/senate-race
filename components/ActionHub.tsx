@@ -98,11 +98,23 @@ export function ActionHub() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex flex-col items-center px-4 text-center md:items-start md:px-0 md:text-left">
             <p className="text-sm font-semibold tracking-wide text-blue-100 uppercase">
-              Email reminder
+              Voting is now open!
             </p>
-            <p className="text-xs text-primary-foreground/50">
+            <Button
+              asChild
+              className="h-12 w-full max-w-xl shrink-0 border-0 bg-accent px-6 font-bold text-black hover:bg-yellow-500 disabled:opacity-60 sm:px-8"
+            >
+              <a
+                href="https://chaffeycollegehspartnerships.formstack.com/forms/ballot_2627"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vote Now!
+              </a>
+            </Button>
+            {/* <p className="text-xs text-primary-foreground/50">
               Enter an email address to receive a reminder when polls open.
             </p>
             <form
@@ -140,7 +152,7 @@ export function ActionHub() {
                   ? message
                   : "\u00a0"}
               </p>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>

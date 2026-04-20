@@ -129,9 +129,21 @@ export function Hero() {
             </a>
           </Button> */}
           <p className="dark:text-blue-7d00 w-full px-1 text-left text-sm leading-relaxed font-semibold text-primary/75">
-            Receive a reminder when polls open.
+            Polls are now open! Vote now.
           </p>
-          <form
+          <Button
+            asChild
+            className="h-12 w-full shrink-0 border-0 bg-accent px-6 font-bold text-black hover:bg-yellow-500 disabled:opacity-60 sm:px-8"
+          >
+            <a
+              href="https://chaffeycollegehspartnerships.formstack.com/forms/ballot_2627"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vote Now!
+            </a>
+          </Button>
+          {/* <form
             className={`flex w-full flex-col gap-3 space-y-3 md:flex-row md:items-stretch ${motionEnter.text} motion-safe:[animation-delay:340ms]`}
             onSubmit={handleSubmit}
           >
@@ -164,10 +176,10 @@ export function Hero() {
             >
               {status === "success" || status === "error" ? message : "\u00a0"}
             </p>
-          </form>
-          <p className="-mt-2 w-full px-1 text-left text-xs text-muted-foreground">
+          </form> */}
+          {/* <p className="-mt-2 w-full px-1 text-left text-xs text-muted-foreground">
             Your info is never shared
-          </p>
+          </p> */}
         </div>
 
         {/* Portrait: md+ fills row height and pins to bottom so feet align with section; no inner overflow clip (was cutting hair) */}

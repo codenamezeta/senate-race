@@ -212,15 +212,27 @@ export function WhyVote() {
             ))}
           </ol>
         </div>
-        <div className="mx-auto flex flex-col items-center justify-between gap-x-6 px-4 pb-12 text-center md:items-start lg:flex-row xl:max-w-7xl xl:gap-x-12 xl:px-3">
-          <div className="flex w-full flex-1 flex-col items-center space-y-2 text-center md:items-start md:text-left">
-            <p className="text-sm font-semibold tracking-wide text-primary uppercase">
-              Email reminder
+        <div className="mx-auto flex flex-col items-center justify-center gap-x-6 px-4 pb-12 text-center md:items-start lg:flex-row xl:max-w-7xl xl:gap-x-12 xl:px-3">
+          <div className="flex w-full max-w-2xl flex-1 flex-col items-center space-y-2 text-center">
+            <p className="mx-auto text-sm font-semibold tracking-wide text-primary uppercase">
+              Voting is now open!
             </p>
-            <p className="text-xs text-muted-foreground">
+            <Button
+              asChild
+              className="mx-auto h-12 w-full shrink-0 border-0 bg-accent px-6 font-bold text-black hover:bg-yellow-500 disabled:opacity-60 sm:px-8"
+            >
+              <a
+                href="https://chaffeycollegehspartnerships.formstack.com/forms/ballot_2627"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vote Now!
+              </a>
+            </Button>
+            {/* <p className="text-xs text-muted-foreground">
               Enter your email address to receive a reminder when polls open.
-            </p>
-            <form className="w-full" onSubmit={handleSubmit}>
+            </p> */}
+            {/* <form className="w-full" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
                 <label htmlFor="action-hub-email" className="sr-only">
                   Email address
@@ -252,9 +264,9 @@ export function WhyVote() {
                   ? message
                   : "\u00a0"}
               </p>
-            </form>
+            </form> */}
           </div>
-          <div className="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+          <div className="hidden flex-col items-center space-y-2 text-center md:items-start md:text-left">
             <p className="text-sm font-semibold tracking-wide text-accent uppercase">
               When to vote
             </p>
